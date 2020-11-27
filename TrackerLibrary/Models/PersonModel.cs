@@ -13,7 +13,7 @@ namespace TrackerLibrary.Models
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// reprezinta primul nume
+        /// reprezinta primul nume  
         /// </summary>
         public string FirstName { get; set; }
         /// <summary>

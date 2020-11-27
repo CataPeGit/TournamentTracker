@@ -31,7 +31,7 @@ namespace TrackerLibrary.DataAccess
         }
 
         /// <summary>
-        /// salveaza un nou premiu in database
+        /// salveaza un nou premiu in database  
         /// </summary>
         /// <param name="model">informatii despre premiu</param>
         /// <returns>informatii despre premius cu tot cu id</returns>
