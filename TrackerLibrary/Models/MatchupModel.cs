@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TrackerLibrary.Models
+{
+    public class MatchupModel
+    {
+        public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
+        /// <summary>
+        /// reprezinta castigatorul meciului
+        /// </summary>
+        public TeamModel Winner { get; set; }
+        /// <summary>
+        /// reprezinta runda in care joaca 2 echipe
+        /// </summary>
+        public int MatchupRound { get; set; }
+    }
+}
