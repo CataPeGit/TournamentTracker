@@ -33,7 +33,7 @@ namespace TrackerLibrary.Models
         {
 
         }
-
+        //prizeModel bun
         public PrizeModel(string placeName, string placeNumber , string prizeAmount, string prizePercentage)
         {
             PlaceName = placeName;
