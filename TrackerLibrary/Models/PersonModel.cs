@@ -28,7 +28,6 @@ namespace TrackerLibrary.Models
         /// reprezinta numarul de telefon in cazul in care exista
         /// </summary>
         public string CellPhoneNumber { get; set; }
-
         public string FullName
         {
             get

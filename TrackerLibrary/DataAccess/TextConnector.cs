@@ -55,7 +55,7 @@ namespace TrackerLibrary.DataAccess
             // adaugam noile date cu id nou (maxim + 1)
             prizes.Add(model);
 
-            // convertim prizes la list<string>
+            // convertim prizes la list<string> 
             // se salveaza list<string> in text file
             prizes.SaveToPrizeFile(PrizesFile);
 
