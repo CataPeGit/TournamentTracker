@@ -129,12 +129,8 @@ namespace TrackerUI
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
 
-            // se creaza meciurile (cine joaca cu cine - matchups) 
-
-
-
-
-
+            // se creaza meciurile (cine joaca cu cine - matchups) :
+            TournamentLogic.CreateRounds(tm);
 
             // se craza un entry pentru turneu
             // se creaza prize entries
@@ -144,9 +140,6 @@ namespace TrackerUI
 
         }
 
-        private void deleteSelectedPlayersButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -88,7 +88,17 @@ namespace TrackerLibrary.DataAccess
                 SaveTournamentPrizes(connection, model);
 
                 SaveTournamentEntries(connection, model);
+
+                SaveTournamentRounds(connection, model);
             }
+
+        }
+        private void SaveTournamentRounds(IDbConnection connection, TournamentModel model)
+        {
+            List<List<MatchupModel>>
+
+
+
 
         }
         private void SaveTournament(IDbConnection connection, TournamentModel model)
