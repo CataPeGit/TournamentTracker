@@ -8,6 +8,10 @@ namespace TrackerLibrary.Models
 {
     public class MatchupModel
     {
+        /// <summary>
+        /// id unic pentru meci
+        /// </summary>
+        public int Id { get; set; }
         public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
         /// <summary>
         /// reprezinta castigatorul meciului
@@ -19,3 +23,4 @@ namespace TrackerLibrary.Models
         public int MatchupRound { get; set; }
     }
 }
+

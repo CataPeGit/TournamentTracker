@@ -14,7 +14,7 @@ namespace TrackerLibrary.DataAccess
         private const string PrizesFile = "PrizeModels.csv";
         private const string PeopleFile = "PersonModels.csv";
         private const string TeamFile = "TeamModelsList.csv"; //are list la final pentru ca asa e numit in database
-
+        private const string TournamentFile = "TournamentModels.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
@@ -22,7 +22,7 @@ namespace TrackerLibrary.DataAccess
 
             int currentId = 1;
 
-            if(people.Count > 0)
+            if (people.Count > 0)
             {
                 currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
             }
@@ -35,7 +35,7 @@ namespace TrackerLibrary.DataAccess
 
             return model;
         }
-        
+
         public PrizeModel CreatePrize(PrizeModel model)
         {
             // intai se deschide text file-ul
@@ -45,7 +45,7 @@ namespace TrackerLibrary.DataAccess
             // gasim ID-ul maxim
             int currentId = 1;
 
-            if(prizes.Count > 0)
+            if (prizes.Count > 0)
             {
                 currentId = prizes.OrderByDescending(x => x.Id).First().Id + 1;
             }
@@ -55,7 +55,7 @@ namespace TrackerLibrary.DataAccess
             // adaugam noile date cu id nou (maxim + 1)
             prizes.Add(model);
 
-            // convertim prizes la list<string> 
+            // convertim prizes la list<string>
             // se salveaza list<string> in text file
             prizes.SaveToPrizeFile(PrizesFile);
 
@@ -81,6 +81,29 @@ namespace TrackerLibrary.DataAccess
             return model;
         }
 
+        public void CreateTournament(TournamentModel model)
+        {
+            List<TournamentModel> tournaments = TournamentFile.
+                FullFilePath().
+                LoadFile().
+                ConvertToTournamentsModelsList(TeamFile, PeopleFile, PrizesFile);
+
+            int currentId = 1;
+
+            if (tournaments.Count > 0)
+            {
+                currentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentId;
+
+            tournaments.Add(model);
+
+            tournaments.SaveToTournamentFile(TournamentFile);
+
+        }
+
+
         public List<PersonModel> GetPerson_All()
         {
             return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
@@ -88,7 +111,9 @@ namespace TrackerLibrary.DataAccess
 
         public List<TeamModel> GetTeam_All()
         {
-            throw new NotImplementedException();
+            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModelsList(PeopleFile);
         }
+
+
     }
 }

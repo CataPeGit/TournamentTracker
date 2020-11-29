@@ -9,6 +9,10 @@ namespace TrackerLibrary.Models
     public class TournamentModel
     {
         /// <summary>
+        /// un id unic pentru turneu
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
         /// reprezinta numele turneului
         /// </summary>
         public string TournamentName { get; set; }
@@ -20,9 +24,9 @@ namespace TrackerLibrary.Models
         /// reprezinta echipele intrate
         /// </summary>
         public List<TeamModel> EnteredTeams { get; set; } = new List<TeamModel>();
-       /// <summary>
-       /// reprezinta o lista cu premiile
-       /// </summary>
+        /// <summary>
+        /// reprezinta o lista cu premiile
+        /// </summary>
         public List<PrizeModel> Prizes { get; set; } = new List<PrizeModel>();
         /// <summary>
         /// reprezinta o lista cu rundele turneului

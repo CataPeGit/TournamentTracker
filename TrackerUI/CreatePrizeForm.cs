@@ -15,9 +15,12 @@ namespace TrackerUI
 {
     public partial class CreatePrizeForm : Form
     {
-        public CreatePrizeForm()
+        IPrizeRequester callingForm;
+        public CreatePrizeForm(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
         private void CreatePrizeForm_Load(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace TrackerUI
 
         private void createPrizeButton_Click(object sender, EventArgs e)
         {
-            //TODO atentie ba ca cu validate-ul asta e un bai aci
+            //TODO atentie la validate-ul asta -periculos 
             if (!ValidateForm())
             {
                 PrizeModel model = new PrizeModel(
@@ -41,21 +44,25 @@ namespace TrackerUI
                     prizeAmountValue.Text,
                     prizePercentageValue.Text);
 
-                    GlobalConfig.Connection.CreatePrize(model);
-                
+                GlobalConfig.Connection.CreatePrize(model);
 
+                callingForm.PrizeComplete(model);
+
+                this.Close();
+
+
+
+                /*
                 placeNameValue.Text = "";
                 placeNumberValue.Text = "";
                 prizeAmountValue.Text = "0";
-                prizePercentageValue.Text = "0";
-
-
+                prizePercentageValue.Text = "0";*/
             }
             else
             {
                 MessageBox.Show("Please check in again.");
             }
-            
+
         }
 
         private bool ValidateForm()
@@ -68,12 +75,12 @@ namespace TrackerUI
                 output = false;
             }
 
-            if(placeNumber < 1)
+            if (placeNumber < 1)
             {
                 output = false;
             }
 
-            if(placeNameValue.Text.Length == 0)
+            if (placeNameValue.Text.Length == 0)
             {
                 output = false;
             }
@@ -89,15 +96,15 @@ namespace TrackerUI
                 output = false;
             }
 
-            if(prizeAmount <= 0 && prizePercentage <= 0)
+            if (prizeAmount <= 0 && prizePercentage <= 0)
             {
                 output = false;
             }
 
-            if(prizePercentage < 0 || prizePercentage > 100)
+            if (prizePercentage < 0 || prizePercentage > 100)
             {
                 output = false;
-            }    
+            }
 
             return output;
         }
