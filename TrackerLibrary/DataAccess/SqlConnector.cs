@@ -181,7 +181,7 @@ namespace TrackerLibrary.DataAccess
             {
                 output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
             }
-            return output;
+            return output; 
         }
 
         public List<TeamModel> GetTeam_All()
