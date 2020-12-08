@@ -18,8 +18,8 @@ namespace TrackerUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Initializam conexiunile cu baza de date
-            TrackerLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            //Initializam conexiunile cu baza de date sau TextFile
+            TrackerLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
             Application.Run(new TournamentDashboardForm());
         }
     }
