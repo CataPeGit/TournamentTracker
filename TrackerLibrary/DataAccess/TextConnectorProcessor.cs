@@ -471,7 +471,6 @@ namespace TrackerLibrary.DataAccess.TextHelpers
         }
 
 
-
         public static void SaveToTournamentFile(this List<TournamentModel> models)
         {
             List<string> lines = new List<string>();

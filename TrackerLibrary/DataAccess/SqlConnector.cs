@@ -27,7 +27,7 @@ namespace TrackerLibrary.DataAccess
                 model.Id = p.Get<int>("@id");
             }
         }
-
+        //LoadFile
         /// <summary>
         /// salveaza un nou premiu in database  
         /// </summary>
