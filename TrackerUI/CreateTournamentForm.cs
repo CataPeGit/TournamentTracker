@@ -137,6 +137,10 @@ namespace TrackerUI
             // se creaza team entries
             GlobalConfig.Connection.CreateTournament(tm);
 
+            //atentie la email in app.config
+            tm.AlertUsersToNewRound(); 
+
+
             TournamentViewerForm frm = new TournamentViewerForm(tm);
             frm.Show();
             this.Close();
