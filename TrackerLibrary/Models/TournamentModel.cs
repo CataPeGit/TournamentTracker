@@ -9,6 +9,10 @@ namespace TrackerLibrary.Models
     public class TournamentModel
     {
         /// <summary>
+        /// eventHandler pentru finalul turneului
+        /// </summary>
+        public event EventHandler<DateTime> OnTournamentComplete;
+        /// <summary>
         /// un id unic pentru turneu
         /// </summary>
         public int Id { get; set; }
@@ -33,5 +37,9 @@ namespace TrackerLibrary.Models
         /// </summary>
         public List<List<MatchupModel>> Rounds { get; set; } = new List<List<MatchupModel>>();
 
+        public void CompleteTournament()
+        {
+            OnTournamentComplete?.Invoke(this, DateTime.Now);
+        }
     }
 }

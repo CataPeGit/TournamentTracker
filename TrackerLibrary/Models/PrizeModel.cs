@@ -29,10 +29,12 @@ namespace TrackerLibrary.Models
         /// </summary>
         public double PrizePercentage { get; set; }
 
+        
         public PrizeModel()
         {
 
         }
+        
 
         public PrizeModel(string placeName, string placeNumber , string prizeAmount, string prizePercentage)
         {

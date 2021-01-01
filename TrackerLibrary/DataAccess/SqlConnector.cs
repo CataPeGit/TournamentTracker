@@ -221,7 +221,6 @@ namespace TrackerLibrary.DataAccess
                     p.Add("@TournamentId", t.Id);
 
                     t.EnteredTeams = connection.Query<TeamModel>("dbo.spTeam_GetByTournament", p, commandType: CommandType.StoredProcedure).ToList();
-
                     foreach (TeamModel team in t.EnteredTeams)
                     {
                         p = new DynamicParameters();
@@ -316,6 +315,17 @@ namespace TrackerLibrary.DataAccess
                         connection.Execute("dbo.spMatchupEntries_Update", p, commandType: CommandType.StoredProcedure);
                     }
                 }
+            }
+        }
+
+        public void CompleteTournament(TournamentModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+
+                connection.Execute("dbo.spMatchupEntries_Update", p, commandType: CommandType.StoredProcedure);
             }
         }
     }
