@@ -165,6 +165,9 @@ namespace TrackerUI
 
         }
 
+        private void addNewMemberGroupBox_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }
