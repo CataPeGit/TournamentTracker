@@ -108,5 +108,10 @@ namespace TrackerUI
 
             return output;
         }
+
+        private void placeNameValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

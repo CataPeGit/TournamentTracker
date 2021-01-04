@@ -121,7 +121,7 @@
             // 
             // addNewMemberGroupBox
             // 
-            this.addNewMemberGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.addNewMemberGroupBox.BackColor = System.Drawing.Color.White;
             this.addNewMemberGroupBox.Controls.Add(this.createMemberButton);
             this.addNewMemberGroupBox.Controls.Add(this.cellphoneValue);
             this.addNewMemberGroupBox.Controls.Add(this.cellphoneLabel);
