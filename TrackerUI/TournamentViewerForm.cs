@@ -265,5 +265,11 @@ namespace TrackerUI
 
             LoadMatchups((int)roundDropDown.SelectedItem);
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            var myForm = new helpForm();
+            myForm.Show();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
         public static List<string> LoadFile(this string file)
         {
             // se deschide text file-ul
-            if (File.Exists(file))
+            if (!File.Exists(file))
             {
                 return new List<string>();
             }
