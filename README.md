@@ -1,6 +1,7 @@
 # TournamentTracker
 
 !!! Complete details in "App.config" for the app to work, placeholder: ###--------------------###
+
 !!! These details (such as <add key ="filePath" value="###--------------------###"/> ) are necesary to run the app
 
 
